@@ -138,12 +138,12 @@ inquirer
     })
     .then(function() {
       const html = fs.readFileSync("newNess.html", 'utf8');
-      const convert = { format: "Letter" };
-      
+      const convert = { format: "Letter" }
+
       pdf.create(html, convert).toFile("./DeveloperProfile.pdf", function(err) {
-          if (err) {
+        if (err) {
             throw err
-          };
+        };
       });
     });
         console.log(`COMPLETE`);
