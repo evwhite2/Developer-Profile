@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    body{
+        background-color:white;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin:50px;
+    }
+    header{
+        background-color: white;
+        color:black;
+        font-size:35px;
+        margin-bottom:30px;
+        text-align: center;
+    }
+    #newFoot{
+        background-color:white;
+        bottom: 0px;
+        color:black;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        margin-top: 15px;
+        position: absolute;
+    }
+    #profilePic{
+        height: 200px;
+        width: 200px;
+    }
+    #row1{
+        background-color: white;
+        border-radius: 5px;
+        justify-content: space-evenly;
+        padding:10px;
+    }
+    #row2{
+        background-color: white;
+        border-radius: 5px;
+        padding:10px;
+    }
+    </style>
+
+    <title>Developer Profile</title>
+
+</head>
+<body>
+
+    <header>
+        Developer Profile
+    </header>
+    
+    <div class= "container">
+        <div class="row" id ="row1">
+            <div class="col-md-6">
+                <h1>${name}</h1>
+                <h2>${login}</h1>
+                <h3>${dataSet.location}</h3>
+                <p><a href=mapLink>See on Google Maps</a></p>
+            </div>
+            <div class="col-md-2">
+                <img id="profilePic" src="assets/GitHub-Mark.png" class="rounded float-right" alt="profilePhoto">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row" id="row2">
+                <div class="col-md-8">
+                    <h3>Bio:</h3>
+                        <p>${bio}</p>
+                        <br>
+                        <p>Number of GitHub Followers: ${followers}</p>
+                        <p>Star Gazer count: ${starGazer}</p>
+                        <p>Following ${following} users</p>
+                </div>
+            </div>
+    </div>
+
+</body>
+
+</html>
