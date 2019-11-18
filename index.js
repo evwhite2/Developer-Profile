@@ -33,7 +33,6 @@ inquirer
       const followers = dataSet.followers;
       const following = dataSet.folloring;
       const starGazers = 'NEED TO PATH STARGAZERS';
-      const backgroundColor= color;
 
       const newDoc=
       `<!DOCTYPE html>
@@ -51,14 +50,14 @@ inquirer
               margin:50px;
           }
           header{
-              background-color: ${backgroundColor};
+              background-color: ${color};
               color:black;
               font-size:35px;
               margin-bottom:30px;
               text-align: center;
           }
           #newFoot{
-              background-color:${backgroundColor};
+              background-color:${color};
               bottom: 0px;
               color:black;
               display: flex;
@@ -72,13 +71,13 @@ inquirer
               width: 200px;
           }
           #row1{
-              background-color: ${backgroundColor};
+              background-color: ${color};
               border-radius: 5px;
               justify-content: space-evenly;
               padding:10px;
           }
           #row2{
-              background-color: ${backgroundColor};
+              background-color: ${color};
               border-radius: 5px;
               padding:10px;
           }
@@ -138,10 +137,10 @@ inquirer
         });
     })
     .then(function() {
-      const html = fs.readFileSync('./newNess.html', 'utf8');
-      const convert = { format: 'Letter' };
+      const html = fs.readFileSync("newNess.html", 'utf8');
+      const convert = { format: "Letter" };
       
-      pdf.create(html, convert).toFile('./DeveloperProfile.pdf', function(err) {
+      pdf.create(html, convert).toFile("./DeveloperProfile.pdf", function(err) {
           if (err) {
             throw err
           };
