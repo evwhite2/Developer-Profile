@@ -1,7 +1,8 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-var pdf = require("html-pdf");
+const pdf = require("html-pdf");
+const options = { format: "Letter" }
 
 inquirer
   .prompt([
@@ -132,14 +133,12 @@ inquirer
         });
     })
     .then(function() {
-      const html = fs.readFileSync("newNess.html", 'utf8');
-      const convert = { format: "Letter" }
-
-      pdf.create(html, convert).toFile("DeveloperProfile.pdf", function(err) {
-        if (err) {
-            throw err
-        };
-      })
+      var html = fs.readFileSync("newNess.html", 'utf8')
+       
+      pdf.create(html, options).toFile('./Developer-Profile.pdf', function(err, res) {
+        if (err) return console.log(err);
+        console.log(res); // { filename: '/app/businesscard.pdf' }
+      });
     });
         console.log(`COMPLETE`);
   });
