@@ -82,12 +82,9 @@ inquirer
               padding:10px;
           }
           </style>
-
           <title>Developer Profile</title>
-
       </head>
       <body>
-
           <header>
               Developer Profile
           </header>
@@ -125,9 +122,7 @@ inquirer
                       </div>
                   </div>
           </div>
-
       </body>
-
       </html>`
 
         fs.writeFile("newNess.html", newDoc, function(err) {
@@ -140,11 +135,11 @@ inquirer
       const html = fs.readFileSync("newNess.html", 'utf8');
       const convert = { format: "Letter" }
 
-      pdf.create(html, convert).toFile("./DeveloperProfile.pdf", function(err) {
+      pdf.create(html, convert).toFile("DeveloperProfile.pdf", function(err) {
         if (err) {
             throw err
         };
-      });
+      })
     });
         console.log(`COMPLETE`);
   });
